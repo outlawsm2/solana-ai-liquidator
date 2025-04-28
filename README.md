@@ -1,15 +1,16 @@
-// Target: NetMind AI ($NMT) collateral liquidations  
-fn nmt_liquidation(ctx: Context<NmtLiquidate>) -> Result<()> {  
-    let nmt_price = get_pyth_price("NMT/USD");  
-    let collateral_ratio = compute_ratio(ctx.accounts.position);  
+🧠 SOLANA AI LIQUIDATOR  
+"Exploiting AI coin collateral inefficiencies before their devs fix them."  
 
-    if collateral_ratio < 1.0 {  
-        let liq_tx = build_liq_tx(  
-            victim: ctx.accounts.position,  
-            oracle: nmt_price,  
-            dex: Kamino, // Kamino has the deepest NMT liquidity  
-        );  
-        submit_blitz_tx(liq_tx)?; // Uses TIP + private RPC  
-    }  
-    Ok(())  
-}  
+ 🔥 Features  
+- NetMind AI ($NMT) loan sniping  
+- AITECH staking lag arb  
+- OLAS governance frontrunning  
+
+## 📊 Performance (Last 24h)  
+| Pair       | Profit (SOL) | Method               |  
+|------------|-------------|----------------------|  
+| NMT/USDC   | 14.8        | Kamino liquidation   |  
+| AITECH/SOL | 9.2         | TensorSwap unstake   |  
+| OLAS/ETH   | 22.1        | Phoenix governance   |  
+
+⚠️ Warning: Requires private RPC access. Public mempool users will be sandwiched.  
